@@ -1,0 +1,21 @@
+.modal {
+    padding-right: 0 !important;
+
+    &-dialog {
+        height: 100%;
+        margin: 0;
+    }
+
+    &-content {
+        background-color: $dark;
+        height: 100%;
+        border-radius: 0;
+    }
+
+    .close {
+        text-shadow: none;
+        color: $white;
+        font-size: 3rem;
+        opacity: 1;
+    }
+}
