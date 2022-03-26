@@ -28,15 +28,31 @@ jobs:
         cd ../build
         sudo rm -r .git
         sudo rm -r .github
-    - name: Copy files to remote
-      uses: garygrossgarten/github-action-scp@release
-      with:
-        host: 70.34.221.230
-        username: "root"
-        password: "_Bj6Sk)z7Kh}4wK="
-        local: "../build"
-        remote: "/var/lib/docker/volumes/mauritzschilderwerkennl_htdocs/_data/htdocs/wp-content/themes/understrap"
-        rmRemote: true
+    # - name: Copy files to remote
+    #   uses: garygrossgarten/github-action-scp@release
+    #   with:
+    #     host: 70.34.221.230
+    #     username: "root"
+    #     password: "_Bj6Sk)z7Kh}4wK="
+    #     local: "../build"
+    #     remote: "/var/lib/docker/volumes/mauritzschilderwerkennl_htdocs/_data/htdocs/wp-content/themes/understrap"
+    #     rmRemote: true
+    - name: Publish
+        uses: nogsantos/scp-deploy@master
+        with:
+          src: ../build/*
+          host: 70.34.221.230
+          remote: "/var/lib/docker/volumes/mauritzschilderwerkennl_htdocs/_data/htdocs/wp-content/themes/understrap"
+          user: "root"
+          key: "-----BEGIN OPENSSH PRIVATE KEY-----
+b3BlbnNzaC1rZXktdjEAAAAACmFlczI1Ni1jdHIAAAAGYmNyeXB0AAAAGAAAABDVnHxFJc
+WA1sVGReEOPSrkAAAAEAAAAAEAAAAzAAAAC3NzaC1lZDI1NTE5AAAAIFo8p2yKmgA+xU7Y
+ulAgMWzxpa+KaozdBTnC5NLMbXt7AAAAkOypHwf/WFoXrhV5x3aIKGD71Dv7EgnXAI/tIC
+Fs5O8P21NeZPZoaVA9pc3KCePnZqPXMiE5dxPuUtDvNM30LwbyBiyMKH0EmqJul64rwayq
+rHJ7enO5dSHzEHmBf8uz9rlJon1965vP9jNNFsyaSvSzxc8hxSXd9c98Ha5HxIy6XjVn05
+M29VPpoRI5MifqGQ==
+-----END OPENSSH PRIVATE KEY-----
+"
     - name: Install NPM and Composer packages
       uses: appleboy/ssh-action@master
       with:
@@ -44,6 +60,6 @@ jobs:
         username: "root"
         password: "_Bj6Sk)z7Kh}4wK="
         script: |
-          cd /var/lib/docker/volumes/examplecom_htdocs/_data/htdocs/wp-content/themes/understrap
+          cd /var/lib/docker/volumes/mauritzschilderwerkennl_htdocs/_data/htdocs/wp-content/themes/understrap
           npm install
           composer install
