@@ -44,7 +44,7 @@ jobs:
           host: 70.34.221.230
           remote: "/var/lib/docker/volumes/mauritzschilderwerkennl_htdocs/_data/htdocs/wp-content/themes/understrap"
           user: "root"
-          key: "-----BEGIN OPENSSH PRIVATE KEY-----b3BlbnNzaC1rZXktdjEAAAAACmFlczI1Ni1jdHIAAAAGYmNyeXB0AAAAGAAAABDVnHxFJcWA1sVGReEOPSrkAAAAEAAAAAEAAAAzAAAAC3NzaC1lZDI1NTE5AAAAIFo8p2yKmgA+xU7YulAgMWzxpa+KaozdBTnC5NLMbXt7AAAAkOypHwf/WFoXrhV5x3aIKGD71Dv7EgnXAI/tICFs5O8P21NeZPZoaVA9pc3KCePnZqPXMiE5dxPuUtDvNM30LwbyBiyMKH0EmqJul64rwayqrHJ7enO5dSHzEHmBf8uz9rlJon1965vP9jNNFsyaSvSzxc8hxSXd9c98Ha5HxIy6XjVn05M29VPpoRI5MifqGQ==-----END OPENSSH PRIVATE KEY-----"
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
     - name: Install NPM and Composer packages
       uses: appleboy/ssh-action@master
       with:
