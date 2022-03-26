@@ -25,12 +25,14 @@ jobs:
       run: |
         mkdir ../build
         cp -TR . ../build
-        tar -cvf deploy.tar ../build/
+        cd ../build 
+        npm install
+        composer install
     - name: copy file via ssh password
       uses: appleboy/scp-action@master
       with:
         host: 70.34.205.206
         username: "root"
         password: "Dr2#E(9F.B4dd*=q"
-        source: "deploy.tar"
+        source: "../build/*"
         target: "/var/lib/docker/volumes/examplecom_htdocs/_data/htdocs/wp-content/themes/understrap"
