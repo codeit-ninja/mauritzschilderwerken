@@ -34,7 +34,6 @@ jobs:
         host: 70.34.205.206
         username: "root"
         password: "Dr2#E(9F.B4dd*=q"
-        local: "../build"
+        local: "../build,!.github,!.git"
         remote: "/var/lib/docker/volumes/examplecom_htdocs/_data/htdocs/wp-content/themes/understrap"
         rmRemote: true
-        atomicPut: true
