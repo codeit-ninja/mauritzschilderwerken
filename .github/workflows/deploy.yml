@@ -29,13 +29,13 @@ jobs:
         sudo rm -r .git
         sudo rm -r .github
     - name: Publish
-        uses: nogsantos/ssh-scp-deploy@v1.3.0
-        with:
-          src: '../build/*'
-          host: 70.34.221.230
-          remote: "/var/lib/docker/volumes/mauritzschilderwerkennl_htdocs/_data/htdocs/wp-content/themes/understrap"
-          user: "root"
-          key: ${{ secrets.SSH_PRIVATE_KEY }}
+      uses: nogsantos/scp-deploy@master
+      with:
+        src: '../build/*'
+        host: 70.34.221.230
+        remote: "/var/lib/docker/volumes/mauritzschilderwerkennl_htdocs/_data/htdocs/wp-content/themes/understrap"
+        user: "root"
+        key: ${{ secrets.SSH_PRIVATE_KEY }}
     - name: Install NPM and Composer packages
       uses: appleboy/ssh-action@master
       with:
