@@ -17,21 +17,10 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-    # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-    - uses: actions/checkout@v2
-
-    # Runs a set of commands using the runners shell
-    - name: Prepare files
-      run: |
-        mkdir ../build
-        cp -TR . ../build
-        cd ../build
-        sudo rm -r .git
-        sudo rm -r .github
     - name: Publish
       uses: nogsantos/scp-deploy@master
       with:
-        src: '../build/*'
+        src: '.'
         host: 70.34.221.230
         remote: "/var/lib/docker/volumes/mauritzschilderwerkennl_htdocs/_data/htdocs/wp-content/themes/understrap"
         user: "root"
