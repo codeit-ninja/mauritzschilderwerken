@@ -25,9 +25,6 @@ jobs:
       run: |
         mkdir ../build
         cd ../build 
-        npm install
-        composer install
-        cp -TR . ../build
         tar -cvf deploy.tar ../build/
     - name: copy file via ssh password
       uses: appleboy/scp-action@master
