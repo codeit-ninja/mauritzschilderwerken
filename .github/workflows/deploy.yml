@@ -20,7 +20,7 @@ jobs:
     - name: Publish
       uses: nogsantos/scp-deploy@master
       with:
-        src: '.'
+        src: '*'
         host: 70.34.221.230
         remote: "/var/lib/docker/volumes/mauritzschilderwerkennl_htdocs/_data/htdocs/wp-content/themes/understrap"
         user: "root"
