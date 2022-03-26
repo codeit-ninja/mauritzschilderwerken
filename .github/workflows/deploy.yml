@@ -36,3 +36,5 @@ jobs:
         password: "Dr2#E(9F.B4dd*=q"
         local: "../build"
         remote: "/var/lib/docker/volumes/examplecom_htdocs/_data/htdocs/wp-content/themes/understrap"
+        rmRemote: true
+        atomicPut: true
