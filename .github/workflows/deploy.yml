@@ -28,11 +28,12 @@ jobs:
         cd ../build 
         npm install
         composer install
+        tar -cvf deploy.tar ../build/
     - name: copy file via ssh password
       uses: appleboy/scp-action@master
       with:
         host: 70.34.205.206
         username: "root"
         password: "Dr2#E(9F.B4dd*=q"
-        source: "build"
+        source: "deploy.tar"
         target: "/var/lib/docker/volumes/examplecom_htdocs/_data/htdocs/wp-content/themes/understrap"
