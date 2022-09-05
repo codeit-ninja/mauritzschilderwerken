@@ -1,6 +1,7 @@
 <?php
 $projects = get_posts( array(
-    'post_type' => 'projecten'
+    'post_type' => 'projecten',
+    'numberposts' => 35
 ) );
 ?>
 <div id="projects" class="row">
