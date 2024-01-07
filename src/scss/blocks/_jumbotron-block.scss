@@ -1,0 +1,25 @@
+.block--jumbotron {
+    position: relative;
+    background-color: $black;
+    padding: 12rem 0 8rem;
+    color: $white;
+    overflow: hidden;
+
+    > * {
+        position: relative;
+        z-index: 1000;
+    }
+
+    &::before {
+        content: " ";
+        position: absolute;
+        top: -500px;
+        left: -500px;
+        height: calc(100% + 1000px);
+        width: calc(100% + 1000px);
+        z-index: 5;
+        transform: rotate(50deg);
+        
+        @include gradient-x-three-colors($start-color: $primary, $mid-color: $black, $color-stop: 50%, $end-color: $purple);
+    }
+}

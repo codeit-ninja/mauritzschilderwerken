@@ -1,0 +1,16 @@
+@import "./hero-block";
+@import "./image-with-links-block";
+@import "./image-with-text-block";
+@import "./jumbotron-block";
+@import "./jumbotron-with-blocks";
+@import "./gallery-block";
+
+.block {
+    margin-bottom: 6rem;
+
+    &--negative--margin {
+        position: relative;
+        margin-top: -12rem;
+        z-index: -100;
+    }
+}

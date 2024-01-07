@@ -1,0 +1,41 @@
+.site {
+    &--header,
+    &--content,
+    &--footer {
+        padding: 0 1.5rem;
+        max-width: 1984px;
+        margin: 0 auto;
+    }
+
+    &--header {
+        position: absolute;
+        width: 100%;
+        left: 0;
+        top: 1.5rem;
+        z-index: 100;
+        padding: 0 3rem;
+    }
+
+    &--navbar {
+        position: relative;
+        padding: 1rem 0;
+        border-bottom: 1px solid $gray-500;
+
+        .nav {
+            --#{$prefix}nav-link-padding-x: 0;
+            --#{$prefix}nav-link-padding-y: 0;
+            --#{$prefix}nav-link-font-weight: #{$nav-link-font-weight};
+            --#{$prefix}nav-link-color: #{$light};
+            --#{$prefix}nav-link-hover-color: #fff;
+            --#{$prefix}nav-link-disabled-color: #{$nav-link-disabled-color};
+
+            &-link {
+                font-size: .9rem;
+
+                &.active {
+                    --#{$prefix}nav-link-color: #{$white};
+                }
+            }
+        }
+    }
+}

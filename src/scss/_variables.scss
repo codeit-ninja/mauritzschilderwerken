@@ -1,0 +1,45 @@
+$black:                     #000;
+$primary:                   #FF6701;
+$light:                     #d7d5ca;
+$body-bg:                   #fff;
+$white:                     #fff;
+
+$text-muted:                #5D5D5D;
+
+$font-family-sans-serif:    'Borna';
+
+$font-size-root:            1.2rem;
+$font-size-base:            $font-size-root;
+
+$h1-font-size:              $font-size-base * 4.5;
+$h2-font-size:              $font-size-base * 4;
+$h3-font-size:              $font-size-base * 3.5;
+$h4-font-size:              $font-size-base * 3;
+$h5-font-size:              $font-size-base * 2.5;
+$h6-font-size:              1rem;
+
+$line-height-base:          1;
+
+$headings-line-height:      .9;
+
+$container-max-widths: (
+    sm: 540px,
+    md: 720px,
+    lg: 960px,
+    xl: 1140px,
+    xxl: 1498px
+);
+
+$accordion-color:                       $black;
+$accordion-border-width:                0;
+$accordion-border-radius:               0;
+$accordion-inner-border-radius:         0;
+
+$accordion-button-active-bg:            transparent;
+$accordion-button-active-color:         transparent;
+
+$accordion-button-focus-border-color:   transparent;
+$accordion-button-focus-box-shadow:     none;
+
+$accordion-transition:                  none;
+$accordion-icon-transition:             none;

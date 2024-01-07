@@ -1,0 +1,34 @@
+.block--image--with--text {
+    $this: &;
+
+    &--primary {
+
+        #{$this}--content {
+            padding-top: 3rem;
+            padding-bottom: 12rem;
+
+            p {
+                margin: 3rem 0;
+            }
+
+            p,
+            .btn {
+                margin-left: 13rem;
+            }
+
+            @include media-breakpoint-down(xl) {
+                p,
+                .btn {
+                    margin-left: 5rem;
+                }
+            }
+
+            @include media-breakpoint-down(md) {
+                p,
+                .btn {
+                    margin-left: 1.5rem;
+                }
+            }
+        }
+    }
+}

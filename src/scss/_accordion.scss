@@ -1,0 +1,25 @@
+.accordion {
+    --#{$prefix}accordion-active-color: #{$black};
+    --#{$prefix}accordion-active-bg: #{$accordion-button-active-bg};
+
+    &-item {
+        padding: 2rem 0;
+
+        &:not(:first-child) {
+            border-top: 1px solid $dark;
+        }
+    }
+
+    &-body {
+        padding: 0;
+        margin-top: 2rem;
+    }
+
+    &-button {
+        padding: 0;
+    }
+
+    .collapsing {
+        transition: .10s ease-in-out;
+    }
+}

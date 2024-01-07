@@ -1,0 +1,81 @@
+.block--jumbotron--with--blocks {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: $white;
+    min-height: calc(100dvh - 3rem);
+
+    &--top--block {
+        position: relative;
+        text-align: center;
+        overflow: hidden;
+        padding: 5rem 15rem;
+        border: 1px solid $gray-900;
+
+        > * {
+            position: relative;
+            z-index: 100;
+        }
+
+        &::before,
+        &::after {
+            display: block;
+            position: absolute;
+            content: " ";
+            top: 0;
+        }
+
+        &::before {
+            left: 0;
+            height: 100%;
+            width: 80%;
+
+            @include gradient-y($start-color: $purple, $end-color: $primary);
+        }
+
+        &::after {
+            background-color: $black;
+            right: -400px;
+            top: -200px;
+            height: calc(100% + 400px);
+            width: calc(50% + 400px);
+            transform: rotate(10deg);
+        }
+
+        // &::before,
+        // &::after {
+        //     display: block;
+        //     position: absolute;
+        //     content: " ";
+        //     top: -500px;
+        //     left: -100px;
+        //     height: calc(100% + 1000px);
+        //     width: calc(100% + 200px);
+        // }
+
+        // &::before {
+        //     transform: rotate(45deg);
+        //     z-index: 50;
+
+        //     @include gradient-x-three-colors($start-color: $primary, $mid-color: $black, $color-stop: 50%, $end-color: $purple);
+        // }
+
+        // &::after {
+        //     background-color: $black;
+        //     transform: rotate(-32deg);
+        //     z-index: 51;
+        //     top: 90%;
+        //     left: auto;
+        //     right: 15%;
+        //     height: 800px;
+        //     width: 800px;
+        //     border-radius: 100px;
+        //     box-shadow: 0 0 200px 200px $black;
+        // }
+    }
+
+    &--bottom--left {
+        padding: 4rem;
+        background-color: $gray-900;
+    }
+}

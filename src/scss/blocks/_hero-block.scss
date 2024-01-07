@@ -1,0 +1,43 @@
+.block--hero {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    height: calc(100dvh - 3rem);
+    width: 100%;
+    overflow: hidden;
+    border-radius: 1rem;
+    margin: 1.5rem 0;
+
+    video,
+    img {
+        object-fit: cover;
+        width: 100vw;
+        height: 100vh;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+    }
+
+    &--image {
+        &::after {
+            background-color: rgba( $black, .3 );
+            width: 100vw;
+            height: 100vh;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            content: " ";
+        }
+    }
+
+    &--leading {
+        margin-bottom: 0;
+        line-height: 1;
+    }
+
+    &--content {
+        padding: 5rem 1.5rem;
+    }
+}

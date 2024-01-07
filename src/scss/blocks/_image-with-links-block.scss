@@ -1,0 +1,21 @@
+.block--image--with--links {
+    $this: &;
+
+    &--image {
+        width: 100%;
+        height: 950px;
+    }
+
+    &--image--links {
+        padding: 3rem 0;
+        margin-left: 5rem;
+
+        @include media-breakpoint-down(xl) {
+            margin-left: 0;
+        }
+    }
+
+    p {
+        margin-bottom: 0;
+    }
+}

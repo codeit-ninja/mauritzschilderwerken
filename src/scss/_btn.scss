@@ -1,0 +1,52 @@
+.btn {
+    --#{$prefix}btn-bg: transparent;
+    --#{$prefix}btn-color: #{$black};
+    --#{$prefix}border-size: 1px;
+    --#{$prefix}border-color: transparent;
+
+    background-color: var(--#{$prefix}btn-bg);
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 3rem;
+    padding: 1rem 3rem;
+    display: inline-block;
+    border: 1px solid var(--#{$prefix}border-color);
+    color: var(--#{$prefix}btn-color);
+    font-size: .9rem;
+
+    &-sm {
+        padding: .55rem 3rem;
+    }
+
+    &-outline-light {
+        --#{$prefix}btn-color: #{$white};
+        --#{$prefix}border-size: 1px;
+        --#{$prefix}border-color: #{$gray-700};
+    }
+
+    &-outline-white {
+        --#{$prefix}btn-color: #{$white};
+        --#{$prefix}border-size: 1px;
+        --#{$prefix}border-color: #{$gray-500};
+    }
+
+    &-outline-dark {
+        --#{$prefix}btn-color: #{$dark};
+        --#{$prefix}border-size: 1px;
+        --#{$prefix}border-color: #{$gray-800};
+    }
+
+    &-primary {
+        --#{$prefix}btn-bg: #{$primary};
+        --#{$prefix}btn-color: #{$white};
+        --#{$prefix}border-size: 1px;
+        --#{$prefix}border-color: #{$primary};
+    }
+
+    &-white {
+        --#{$prefix}btn-bg: #{$white};
+        --#{$prefix}btn-color: #{$dark};
+        --#{$prefix}border-size: 1px;
+        --#{$prefix}border-color: #{$white};
+    }
+}
