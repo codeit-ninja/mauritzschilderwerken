@@ -12,6 +12,8 @@
     onMount( async () => {
         await import('bootstrap')
     })
+
+    console.log(data)
 </script>
 
 <div class="site--header">

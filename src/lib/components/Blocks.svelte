@@ -3,9 +3,11 @@
     import GalleryBlock from "./blocks/GalleryBlock.svelte";
     import HeroBlock from "./blocks/HeroBlock.svelte";
     import ImageWithLinksBlock from "./blocks/ImageWithLinksBlock.svelte";
+    import CtaCardBlock from "./blocks/CtaCardBlock.svelte";
     import ImageWithTextBlock from "./blocks/ImageWithTextBlock.svelte";
     import JumbotronBlock from "./blocks/JumbotronBlock.svelte";
     import JumbotronWithBlocksBlock from "./blocks/JumbotronWithBlocksBlock.svelte";
+    import NumbersBlock from "./blocks/NumbersBlock.svelte";
 
     export let blocks: PagesBlocks[]
 </script>
@@ -27,6 +29,12 @@
     {/if}
     {#if block.collection === 'block_gallery'}
         <GalleryBlock block={block.item} />
+    {/if}
+    {#if block.collection === 'block_numbers'}
+        <NumbersBlock block={block.item} />
+    {/if}
+    {#if block.collection === 'block_cta_card'}
+        <CtaCardBlock block={block.item} />
     {/if}
 {/each}
 

@@ -1,4 +1,13 @@
-export type BlockGallery = {
+export type BlockCtaCard = {
+    button?: number | Buttons | null;
+    description?: string | null;
+    id: number;
+    image?: string | DirectusFiles | null;
+    title?: string | null;
+    useButton?: boolean | null;
+  };
+  
+  export type BlockGallery = {
     cta: string;
     ctaButton?: number | Buttons | null;
     ctaText?: string | null;
@@ -59,6 +68,11 @@ export type BlockGallery = {
     topBlockButton?: number | Buttons | null;
     topBlockText?: string | null;
     topBlockTitle?: string | null;
+  };
+  
+  export type BlockNumbers = {
+    id: number;
+    numbers?: unknown | null;
   };
   
   export type Buttons = {
@@ -421,6 +435,11 @@ export type BlockGallery = {
     url: string;
   };
   
+  export type Menu = {
+    id: number;
+    items?: unknown | null;
+  };
+  
   export type Meta = {
     key: string;
     value?: string | null;
@@ -454,6 +473,7 @@ export type BlockGallery = {
   };
   
   export type CustomDirectusTypes = {
+    block_cta_card: BlockCtaCard[];
     block_gallery: BlockGallery[];
     block_gallery_files: BlockGalleryFiles[];
     block_hero: BlockHero[];
@@ -461,6 +481,7 @@ export type BlockGallery = {
     block_image_with_links: BlockImageWithLinks[];
     block_jumbotron: BlockJumbotron[];
     block_jumbotron_with_blocks: BlockJumbotronWithBlocks[];
+    block_numbers: BlockNumbers[];
     buttons: Buttons[];
     directus_activity: DirectusActivity[];
     directus_collections: DirectusCollections[];
@@ -486,6 +507,7 @@ export type BlockGallery = {
     directus_users: DirectusUsers[];
     directus_versions: DirectusVersions[];
     directus_webhooks: DirectusWebhooks[];
+    menu: Menu;
     meta: Meta[];
     pages: Pages[];
     pages_blocks: PagesBlocks[];

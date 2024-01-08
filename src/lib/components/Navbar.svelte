@@ -34,7 +34,7 @@
                             {/if}
                         {/each}
                     </nav>
-                    <a role="button" class="btn btn-outline-white" href="/offerte">Offerte</a>
+                    <a role="button" class="btn btn-outline-white btn-sm" href="/offerte">Offerte</a>
                 </div>
             </div>
         </div>

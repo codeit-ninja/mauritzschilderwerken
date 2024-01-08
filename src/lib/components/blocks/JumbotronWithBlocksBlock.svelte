@@ -9,8 +9,6 @@
     }
 
     export let block: Block;
-
-    console.log(block)
 </script>
 
 <div class="block block--jumbotron--with--blocks rounded-4 bg-black py-5">
