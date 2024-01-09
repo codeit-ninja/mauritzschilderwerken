@@ -4,12 +4,22 @@ $light:                     #d7d5ca;
 $body-bg:                   #fff;
 $white:                     #fff;
 
-$text-muted:                #5D5D5D;
+$gray-100:                  #dcdcdc;
+$gray-200:                  #c5c5c5;
+$gray-300:                  #aeaeae;
+$gray-400:                  #979797;
+$gray-500:                  #808080;
+$gray-600:                  #686868;
+$gray-700:                  #515151;
+$gray-800:                  #3a3a3a;
+$gray-900:                  #232323;
+
+$text-muted:                $gray-600;
 
 $font-family-sans-serif:    'Borna';
 
 $font-size-root:            1.2rem;
-$font-size-base:            $font-size-root;
+$font-size-base:            1.1rem;
 
 $h1-font-size:              $font-size-base * 4.5;
 $h2-font-size:              $font-size-base * 4;
@@ -43,3 +53,24 @@ $accordion-button-focus-box-shadow:     none;
 
 $accordion-transition:                  none;
 $accordion-icon-transition:             none;
+
+$input-padding-y:                   1rem;
+$input-padding-x:                   0;
+
+$input-font-size:                   1.1rem;
+$input-font-size-lg:                1.1rem;
+
+$input-bg:                          transparent;
+$input-focus-bg:                    transparent;
+
+$input-color:                       $white;
+
+$input-border-width:                0;
+
+$input-border-radius:               0;
+$input-border-radius-sm:            0;
+$input-border-radius-lg:            0;
+
+$input-placeholder-color:           $gray-700;
+
+$input-focus-box-shadow:            none;

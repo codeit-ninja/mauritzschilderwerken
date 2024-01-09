@@ -1,0 +1,17 @@
+.form {
+    &-control {
+        border-bottom: 1px solid $gray-800;
+    }
+
+    &-label {
+        color: $body-color;
+    }
+}
+
+.bg-black {
+    .form {
+        &-label {
+            color: $white;
+        }
+    }
+}

@@ -9,7 +9,5 @@
         const request = await client.request(
             readFile( id )
         )
-
-        console.log(request)
     })()
 </script>

@@ -84,6 +84,13 @@ export type BlockCtaCard = {
     variant?: string | null;
   };
   
+  export type Checkbox = {
+    id: number;
+    label?: string | null;
+    required?: boolean | null;
+    values?: unknown | null;
+  };
+  
   export type DirectusActivity = {
     action: string;
     collection: string;
@@ -435,6 +442,33 @@ export type BlockCtaCard = {
     url: string;
   };
   
+  export type Email = {
+    defaultValue?: string | null;
+    id: number;
+    label?: string | null;
+    placeholder?: string | null;
+    required?: boolean | null;
+  };
+  
+  export type FormSubmissions = {
+    data?: unknown | null;
+    form?: number | Forms | null;
+    id: number;
+  };
+  
+  export type Forms = {
+    fields: any[] | FormsFields[];
+    id: number;
+    name?: string | null;
+  };
+  
+  export type FormsFields = {
+    collection?: string | null;
+    forms_id?: number | Forms | null;
+    id: number;
+    item?: string | any | null;
+  };
+  
   export type Menu = {
     id: number;
     items?: unknown | null;
@@ -443,6 +477,19 @@ export type BlockCtaCard = {
   export type Meta = {
     key: string;
     value?: string | null;
+  };
+  
+  export type Number = {
+    defaultValue?: number | null;
+    id: number;
+    label?: string | null;
+    placeholder?: string | null;
+    required?: boolean | null;
+  };
+  
+  export type Offerte = {
+    form?: number | Forms | null;
+    id: number;
   };
   
   export type Pages = {
@@ -472,6 +519,30 @@ export type BlockCtaCard = {
     logo?: string | DirectusFiles | null;
   };
   
+  export type Tel = {
+    defaultValue?: string | null;
+    id: number;
+    label?: string | null;
+    placeholder?: string | null;
+    required?: boolean | null;
+  };
+  
+  export type Text = {
+    defaultValue?: string | null;
+    id: number;
+    label?: string | null;
+    placeholder?: string | null;
+    required?: boolean | null;
+  };
+  
+  export type Textarea = {
+    defaultValue?: string | null;
+    id: number;
+    label?: string | null;
+    placeholder?: string | null;
+    required?: boolean | null;
+  };
+  
   export type CustomDirectusTypes = {
     block_cta_card: BlockCtaCard[];
     block_gallery: BlockGallery[];
@@ -483,6 +554,7 @@ export type BlockCtaCard = {
     block_jumbotron_with_blocks: BlockJumbotronWithBlocks[];
     block_numbers: BlockNumbers[];
     buttons: Buttons[];
+    checkbox: Checkbox[];
     directus_activity: DirectusActivity[];
     directus_collections: DirectusCollections[];
     directus_dashboards: DirectusDashboards[];
@@ -507,10 +579,19 @@ export type BlockCtaCard = {
     directus_users: DirectusUsers[];
     directus_versions: DirectusVersions[];
     directus_webhooks: DirectusWebhooks[];
+    email: Email[];
+    form_submissions: FormSubmissions[];
+    forms: Forms[];
+    forms_fields: FormsFields[];
     menu: Menu;
     meta: Meta[];
+    number: Number[];
+    offerte: Offerte;
     pages: Pages[];
     pages_blocks: PagesBlocks[];
     site: Site;
+    tel: Tel[];
+    text: Text[];
+    textarea: Textarea[];
   };
   

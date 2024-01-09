@@ -1,0 +1,1 @@
+export const randomID = () => "_" + Math.random().toString(16).slice(2)
