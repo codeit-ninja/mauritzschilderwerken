@@ -11,6 +11,7 @@
         position: absolute;
         width: 100%;
         left: 0;
+        right: 0;
         top: 1.5rem;
         z-index: 100;
         padding: 0 3rem;
@@ -20,6 +21,11 @@
         position: relative;
         padding: 1rem 0;
         border-bottom: 1px solid $gray-500;
+
+        &--left,
+        &--right {
+            flex: 1;
+        }
 
         .nav {
             --#{$prefix}nav-link-padding-x: 0;
@@ -42,6 +48,21 @@
 
 .page {
     &--offerte {
-        padding-top: 180px;
+        --#{$prefix}secondary-color: #{$gray-600};
+        padding-top: 10rem;
+        padding-bottom: 6rem;
+
+        h1 {
+            font-size: clamp(2rem, 4.5vw, 4rem)
+        }
+
+        h6 {
+            color: $primary;
+            margin-bottom: 1.5rem;
+        }
+
+        p {
+            margin: 3rem 0 4rem;
+        }
     }
 }

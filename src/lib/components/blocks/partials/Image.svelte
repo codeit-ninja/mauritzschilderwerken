@@ -5,6 +5,7 @@
     export let image: DirectusFiles;
     export let type: 'normal' | 'background' = 'normal';
     export let thumbnail = false;
+    export let rounded = true;
 
     let query = '?';
 
@@ -14,10 +15,10 @@
 </script>
 
 {#if type === 'normal'}
-    <img src={`${$page.data.site.assetsUrl}/${image.id}${query}`} alt={image.title} class="img-fluid rounded-4" />
+    <img src={`${$page.data.site.assetsUrl}/${image.id}${query}`} alt={image.title} class="img-fluid" class:rounded-4={rounded} />
 {/if}
 {#if type === 'background'}
     <div class="image--background">
-        <img src={`${$page.data.site.assetsUrl}/${image.id}${query}`} alt={image.title} class="img-fluid rounded-4" />
+        <img src={`${$page.data.site.assetsUrl}/${image.id}${query}`} alt={image.title} class="img-fluid" class:rounded-4={rounded} />
     </div>
 {/if}

@@ -9,13 +9,14 @@
     }
 
     export let field: Text;
+    export let value = field.defaultValue;
 
     const id = randomID();
     const { placeholder, required, label, defaultValue } = field;
 </script>
-<div class="mb-3">
+<div class="mb-0">
     {#if label}
-        <label class="form-label" for={id}>{ label }</label>
+        <label class="d-block form-label mt-5" for={id}>{ label }</label>
     {/if}
-    <input type="text" {placeholder} {required} {id} class="form-control" />
+    <input type="text" {placeholder} {required} {id} bind:value={value} class="form-control" />
 </div>

@@ -488,8 +488,11 @@ export type BlockCtaCard = {
   };
   
   export type Offerte = {
+    bottomImage?: string | DirectusFiles | null;
+    content?: string | null;
     form?: number | Forms | null;
     id: number;
+    topImage?: string | DirectusFiles | null;
   };
   
   export type Pages = {
@@ -497,7 +500,7 @@ export type BlockCtaCard = {
     children: any[] | Pages[];
     hide_in_nav?: boolean | null;
     id: number;
-    name?: string | null;
+    name: string;
     order?: number | null;
     parent_id?: number | Pages | null;
     slug?: string | null;

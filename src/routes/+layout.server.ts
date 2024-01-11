@@ -16,21 +16,14 @@ type Menu = {
 
 export const load: LayoutServerLoad = async ( { request, params } ) => {
     const menu = await client.request(
-        readItems('pages', {
-            fields: ['name', 'slug', 'parent_id', 'children', 'order', 'hide_in_nav'],
-            sort: 'order'
-        })
-    )
+        readSingleton('menu')
+    ) as Menu;
     
     const site = await client.request(
         readSingleton('site', {
-            fields: ['*', { home_page: ['*', { blocks: ['*.*.*.*'] }] }]
+            fields: ['*', { home_page: ['*', { blocks: ['*.*.*.*'] }] }, { logo: ['*'] }]
         })
     )
-
-    const menu_2 = await client.request(
-        readSingleton('menu')
-    ) as Menu;
     
     const fetchMenuItems = async ( key: string | number ) => {
         return await client.request(
@@ -40,7 +33,7 @@ export const load: LayoutServerLoad = async ( { request, params } ) => {
     
     let page: Pages;
     
-    const menuPromises = menu_2.items.map(async item => {
+    const menuPromises = menu.items.map(async item => {
         const collection = await fetchMenuItems( item.collection.key )
         const submenuPromises = item.submenu?.map( async item => await fetchMenuItems( item.collection.key ))
 
@@ -64,8 +57,7 @@ export const load: LayoutServerLoad = async ( { request, params } ) => {
     }
     
     return {
-        menuData,
-        menu,
+        menu: menuData,
         site,
         page
     }

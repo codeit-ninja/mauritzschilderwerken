@@ -14,7 +14,7 @@ $gray-700:                  #515151;
 $gray-800:                  #3a3a3a;
 $gray-900:                  #232323;
 
-$text-muted:                $gray-600;
+$text-muted:                $gray-300;
 
 $font-family-sans-serif:    'Borna';
 
@@ -74,3 +74,12 @@ $input-border-radius-lg:            0;
 $input-placeholder-color:           $gray-700;
 
 $input-focus-box-shadow:            none;
+
+$form-check-input-border-radius:        0;
+$form-check-input-checked-bg-color:     transparent;
+$form-check-input-focus-box-shadow:     none;
+$form-check-input-border:               1px solid $gray-600;
+$form-check-label-color:                $gray-600;
+
+$form-check-input-checked-color:        $white;
+$form-check-input-checked-border-color: $white;

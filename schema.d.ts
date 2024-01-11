@@ -248,7 +248,7 @@ export interface components {
     };
     ItemsPages: {
       id?: number;
-      name?: string | null;
+      name?: string;
       parent_id?: number | components["schemas"]["ItemsPages"] | null;
       slug?: string | null;
       order?: number | null;

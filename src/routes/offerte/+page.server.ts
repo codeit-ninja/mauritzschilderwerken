@@ -2,10 +2,11 @@ import { client } from "$lib/directus";
 import { readSingleton } from "@directus/sdk";
 import type { PageServerLoad } from "./$types";
 
-export const load: PageServerLoad = async ({ params }) => {
+export const load: PageServerLoad = async () => {
     const page = await client.request(
         readSingleton('offerte', {
-            fields: ['form', { form: ['*', { fields: ['*.*'] }] }]
+            // @ts-ignore
+            fields: ['*.*', { form: ['*', { fields: ['*.*'] }] }]
         })
     )
 

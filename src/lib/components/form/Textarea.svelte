@@ -13,9 +13,9 @@
     const id = randomID();
     const { placeholder, required, label, defaultValue } = field;
 </script>
-<div class="mb-3">
+<div class="mb-0">
     {#if label}
-        <label class="form-label" for={id}>{ label }</label>
+        <label class="d-block form-label mt-5" for={id}>{ label }</label>
     {/if}
     <textarea {placeholder} {required} {id} rows="8" class="form-control"></textarea>
 </div>
