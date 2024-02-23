@@ -3,6 +3,10 @@
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr;
         gap: 1rem;
+
+        @include media-breakpoint-down(xl) {
+            grid-template-columns: 1fr 1fr;
+        }
     }
 
     &--cta {
@@ -13,6 +17,15 @@
         align-items: center;
         justify-content: center;
         padding: 3rem;
+
+        @include media-breakpoint-down(xl) {
+            grid-column-start: 1;
+            grid-column-end: 3;
+            grid-row-start: auto;
+            grid-row-end: auto;
+            padding: 3rem;
+            min-height: 500px;
+        }
 
         p {
             margin-top: .5rem;
@@ -26,5 +39,10 @@
         top: -40px;
         right: -2rem;
         transform: rotate(13deg);
+
+        @include media-breakpoint-down(xl) {
+            top: -80px;
+            text-wrap: nowrap;
+        }
     }
 }

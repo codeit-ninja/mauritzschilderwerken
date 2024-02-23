@@ -4,20 +4,17 @@
      */
     import type { PageData } from './$types';
     import Form from '$lib/components/Form.svelte';
-    import type { DirectusFiles, FormsFields } from '$directus';
+    import type { directus_files } from '$directus';
     import Image from '$lib/components/blocks/partials/Image.svelte';
 
     type Offerte = PageData & {
         page: {
             form: any;
-            topImage: DirectusFiles;
-            bottomImage: DirectusFiles;
+            topImage: directus_files;
+            bottomImage: directus_files;
         }
     }
-
     export let data: Offerte;
-
-    console.log(data)
 </script>
 <div class="bg-black rounded-4 text-white my-3 px-4 page--offerte">
     <div class="container">
@@ -25,7 +22,7 @@
             <div class="col-md-5">
                 {@html data.page.content}
                 {#if data.page.form}
-                    <Form fields={data.page.form.fields} title={data.page.form.name} />
+                    <Form id={data.page.form.id} fields={data.page.form.fields} title={data.page.form.name} />
                 {/if}
             </div>
             <div class="col-md-7">

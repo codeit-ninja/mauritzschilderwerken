@@ -1,5 +1,5 @@
 <script lang="ts">
-    import type { PagesBlocks } from "$directus";
+    import type { pages_blocks } from "$directus";
     import GalleryBlock from "./blocks/GalleryBlock.svelte";
     import HeroBlock from "./blocks/HeroBlock.svelte";
     import ImageWithLinksBlock from "./blocks/ImageWithLinksBlock.svelte";
@@ -8,10 +8,16 @@
     import JumbotronBlock from "./blocks/JumbotronBlock.svelte";
     import JumbotronWithBlocksBlock from "./blocks/JumbotronWithBlocksBlock.svelte";
     import NumbersBlock from "./blocks/NumbersBlock.svelte";
+    import ProjectsGalleryBlock from "./blocks/ProjectsGalleryBlock.svelte";
+    import TextWithListBlock from "./blocks/TextWithListBlock.svelte";
+    import HeaderOffsetBlock from "./blocks/HeaderOffsetBlock.svelte";
 
-    export let blocks: PagesBlocks[]
+    export let blocks: Pick<pages_blocks, 'collection' | 'item'>[]
 </script>
 {#each blocks as block}
+    {#if block.collection === 'block_header_offset'}
+        <HeaderOffsetBlock block={block.item} />
+    {/if}
     {#if block.collection === 'block_hero'}
         <HeroBlock block={block.item} />
     {/if}
@@ -36,34 +42,10 @@
     {#if block.collection === 'block_cta_card'}
         <CtaCardBlock block={block.item} />
     {/if}
+    {#if block.collection === 'block_gallery_projects'}
+        <ProjectsGalleryBlock block={block.item} />
+    {/if}
+    {#if block.collection === 'block_text_with_list'}
+        <TextWithListBlock block={block.item} />
+    {/if}
 {/each}
-
-<!-- <div class="grid">
-    <div class="test">
-        3
-    </div>
-    <div>
-        1
-    </div>
-    <div>
-        2
-    </div>
-    <div>
-        4
-    </div>
-    <div>
-        5
-    </div>
-    <div>
-        6
-    </div>
-    <div>
-        7
-    </div>
-    <div>
-        8
-    </div>
-    <div>
-        9
-    </div>
-</div> -->

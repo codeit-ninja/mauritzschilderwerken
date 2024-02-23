@@ -1,0 +1,61 @@
+.block--projects--gallery {
+    a:not(.btn, .site--link) {
+        position: relative;
+        color: $white;
+        font-weight: 500;
+        font-size: clamp(1rem, 1.5rem, 3vw);
+
+        &:hover {
+            span {
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+
+        span {
+            opacity: 0;
+            visibility: hidden;
+            background-color: rgba($dark, .4);
+            position: absolute;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            border-radius: var(--bs-border-radius-xl);
+            transition: all .15s ease-in-out;
+        }
+    }
+
+    &--carousel {
+        background-color: $black;
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100dvh;
+        width: 100dvw;
+        z-index: 1000;
+        justify-content: center;
+        flex-direction: column;
+
+        .site--link {
+            position: absolute;
+            top: 0;
+            right: 0;
+            padding: 1.5rem 3rem;
+            z-index: 10001;
+        }
+
+        .carousel-inner {
+            display: flex;
+            align-items: center;
+            width: 100vw;
+        }
+
+        .carousel-item {
+            text-align: center;
+        }
+    }
+}

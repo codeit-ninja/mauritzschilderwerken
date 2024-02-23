@@ -1,9 +1,9 @@
 <script lang="ts">
-    import type { BlockImageWithLinks, DirectusFiles } from '$directus';
+    import type { block_image_with_links, directus_files } from '$directus';
     import Image from './partials/Image.svelte';
 
-    type Block = Omit<BlockImageWithLinks, 'links' | 'image'> & {
-        image: DirectusFiles;
+    type Block = Omit<block_image_with_links, 'links' | 'image'> & {
+        image: directus_files;
         links: {
             title: string;
             url: string;
@@ -26,7 +26,9 @@
             </div>
             <div class="col-md-6">
                 <div class="block--image--with--links--image--links">
-                    <h6 class="mb-3">— { block.title }</h6>
+                    <h6 class="mb-3 block--image--with--links--title">
+                        — { block.title }
+                    </h6>
 
                     <div class="accordion" id="accordion-{id}">
                         {#each block.links as link, i}

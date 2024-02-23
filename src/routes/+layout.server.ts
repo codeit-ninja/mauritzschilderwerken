@@ -1,26 +1,29 @@
-import type { LayoutServerLoad } from './$types';
 import { client } from '$lib/directus';
-import { readItem, readItems, readSingleton } from '@directus/sdk';
-import type { Pages } from '$directus';
+import { readItem, readSingleton } from '@directus/sdk';
+import type { pages, menu, buttons } from '$directus';
 import { getPageBySlug } from '$lib/server/helpers';
 
 type MenuPagesCollection = { key: number; collection: MenuPagesCollection; }
+type MenuButtonCollection = { key: number; collection: 'buttons'; }
 type MenuItem = {
     collection: MenuPagesCollection;
     submenu: MenuPagesCollection[];
     position: 'left' | 'right';
+    isButton: boolean;
+    button: MenuButtonCollection;
 }
 type Menu = {
     items: MenuItem[]
 }
 
-export const load: LayoutServerLoad = async ( { request, params } ) => {
+export const load = async ( { params } ) => {    
     const menu = await client.request(
         readSingleton('menu')
-    ) as Menu;
+    ) as unknown as Menu;
     
     const site = await client.request(
         readSingleton('site', {
+            // @ts-expect-error
             fields: ['*', { home_page: ['*', { blocks: ['*.*.*.*'] }] }, { logo: ['*'] }]
         })
     )
@@ -30,17 +33,28 @@ export const load: LayoutServerLoad = async ( { request, params } ) => {
             readItem('pages', key)
         )
     }
+
+    const fetchButton = async ( key: string | number ) => {
+        return await client.request(
+            readItem('buttons', key)
+        )
+    }
     
-    let page: Pages;
+    let page: pages;
     
     const menuPromises = menu.items.map(async item => {
+        let button: buttons | undefined = undefined;
         const collection = await fetchMenuItems( item.collection.key )
-        const submenuPromises = item.submenu?.map( async item => await fetchMenuItems( item.collection.key ))
+
+        if( item.isButton && item.button ) {
+            button = await fetchButton( item.button.key )
+        }
 
         return {
-            submenu: submenuPromises ? await Promise.all( submenuPromises ) : [],
             collection,
             position: item.position,
+            isButton: item.isButton,
+            button
         }
     })
 
@@ -53,9 +67,9 @@ export const load: LayoutServerLoad = async ( { request, params } ) => {
     if( params.slug ) {
         page = await getPageBySlug( params.slug )
     } else {
-        page = site.home_page as Pages;
+        page = site.home_page as pages;
     }
-    
+
     return {
         menu: menuData,
         site,

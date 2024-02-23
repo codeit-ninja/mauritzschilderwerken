@@ -1,10 +1,13 @@
 @import "./hero-block";
+@import "./block-header-offset";
 @import "./image-with-links-block";
 @import "./image-with-text-block";
 @import "./jumbotron-block";
 @import "./jumbotron-with-blocks";
 @import "./gallery-block";
 @import "./numbers-block";
+@import "./block-text-with-list";
+@import "./block-projects-gallery";
 @import "./cta-card-block";
 
 .block {
@@ -12,7 +15,7 @@
 
     &--negative--margin {
         position: relative;
-        margin-top: -12rem;
+        margin-top: -12rem !important;
         z-index: -100;
     }
 }

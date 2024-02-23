@@ -1,12 +1,18 @@
 .block--hero {
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    height: calc(100dvh - 3rem);
-    width: 100%;
-    overflow: hidden;
-    border-radius: 1rem;
-    margin: 1.5rem 0;
+    &--wrapper {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+        border-radius: 1rem;
+        margin: 1.5rem 0;
+        padding-top: 300px;
+    }
+
+    &--stretch {
+        height: calc(100dvh - 3rem);
+    }
 
     video,
     img {

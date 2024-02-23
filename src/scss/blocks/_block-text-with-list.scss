@@ -1,0 +1,30 @@
+.block--text--with--list {
+    &--item {
+        margin-bottom: 2rem;
+        padding-bottom: 1.5rem;
+        border-bottom: 1px solid $dark;
+        font-weight: 500;
+
+        h6 {
+            color: $primary;
+        }
+
+        a {
+            color: $dark;
+            text-decoration: none;
+            border-bottom: 1px dashed $dark;
+        }
+
+        a + a {
+            margin-left: 1rem;
+        }
+    }
+
+    &--text {
+        padding-right: 6rem;
+
+        @include media-breakpoint-down(xxl) {
+            padding-right: 0;
+        }
+    }
+}

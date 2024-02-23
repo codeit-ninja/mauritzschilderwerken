@@ -1,10 +1,5 @@
 <script lang="ts">
-    import type { LayoutData } from './$types';
-    
-    import Navbar from '$lib/components/Navbar.svelte';
     import Logo from '$lib/components/blocks/partials/Logo.svelte';
-
-    export let data: LayoutData;
 </script>
 
 <div class="site--header text-white">
@@ -12,7 +7,12 @@
         <div class="site--navbar">
             <div class="d-flex justify-content-between align-items-center">
                 <div>
-                    <a href="/">Terug naar website</a>
+                    <a href="/" class="d-flex gap-3 align-items-center text-white site--link">
+                        <span class="material-symbols-outlined">
+                            west
+                        </span>
+                        Terug naar website
+                    </a>
                 </div>
                 <div>
                     <Logo />

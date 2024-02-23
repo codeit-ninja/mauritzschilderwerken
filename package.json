@@ -9,21 +9,26 @@
     "directus-typescript-gen": "npx directus-typescript-gen --host http://localhost:8055 --email richard@codeit.ninja --password Creative12!@ --typeName MyCollections --outFile ./src/types/my-collections.d.ts",
     "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
     "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
-    "introspect-drizzle": "drizzle-kit introspect:sqlite --config=drizzle.config.ts",
-    "fix-directus-schema": "node fix-directus-schema.js",
-    "introspect-fix-directus": "pnpm introspect-drizzle && pnpm fix-directus-schema"
+    "generate-schema": "cd ./directus/generator && bun run cli generate --host http://localhost:8055/ --access-token 4SAxePJaa968LskRjjuX73FJEn5FsQXV --file ./schema.ts && bun ./fix.ts"
   },
   "devDependencies": {
+    "@directus/schema": "^11.0.1",
     "@popperjs/core": "^2.11.8",
     "@sveltejs/adapter-auto": "^3.0.0",
+    "@sveltejs/adapter-node": "^3.0.1",
     "@sveltejs/kit": "^2.0.0",
     "@sveltejs/vite-plugin-svelte": "^3.0.0",
+    "@types/better-sqlite3": "^7.6.8",
     "@types/bootstrap": "^5.2.10",
     "bootstrap": "^5.3.2",
     "directus-extension-models": "^2.5.2",
     "dotenv": "^16.3.1",
-    "drizzle-kit": "^0.20.9",
+    "drizzle-kit": "^0.20.10",
+    "knex": "^3.1.0",
+    "kysely": "^0.27.2",
+    "kysely-codegen": "^0.11.0",
     "sass": "^1.69.5",
+    "sqlite3": "^5.1.7",
     "svelte": "^4.2.7",
     "svelte-check": "^3.6.0",
     "tslib": "^2.4.1",
@@ -34,6 +39,9 @@
   "dependencies": {
     "@directus/sdk": "^14.0.0",
     "@prisma/client": "5.7.1",
+    "better-sqlite3": "^9.2.2",
+    "drizzle-orm": "^0.29.3",
+    "material-symbols": "latest",
     "prisma": "^5.7.1",
     "svelte-markdown": "^0.4.1"
   }

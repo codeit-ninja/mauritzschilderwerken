@@ -1,0 +1,35 @@
+.shape {
+    position: relative;
+
+    &::before {
+        background-image: url(/flame.png);
+        background-size: cover;
+        background-repeat: no-repeat;
+        position: absolute;
+        display: block;
+        content: " ";
+        height: 100vh;
+        width: 100%;
+        right: -100px;
+        bottom: -300px;
+        z-index: -100;
+        overflow: visible;
+    }
+}
+
+.overlay {
+    position: relative;
+
+    &::after {
+        background-color: rgba($gray-800, .5);
+        display: block;
+        content: " ";
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        z-index: -1;
+        border-radius: 1rem;
+    }
+}

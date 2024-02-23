@@ -4,4 +4,6 @@
     import { page } from '$app/stores';
 </script>
 
-<Image image={$page.data.site.logo} rounded={false} />
+<a href="/">
+    <Image image={$page.data.site.logo} rounded={false} />
+</a>

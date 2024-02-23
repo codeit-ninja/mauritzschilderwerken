@@ -2,8 +2,10 @@
     /**
      * Offerte page template
      */
-    import { page } from '$app/stores';
-    import Form from '$lib/components/Form.svelte';
+    import type { PageData } from './$types';
+    import Blocks from '$lib/components/Blocks.svelte';
 
-    console.log(page)
+    export let data: PageData;
 </script>
+
+<Blocks blocks={data.blocks} />

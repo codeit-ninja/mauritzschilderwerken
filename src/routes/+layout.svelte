@@ -1,4 +1,6 @@
 <script lang="ts">    
+    import 'material-symbols';
+
     import '../scss/bootstrap.scss';
     import '../scss/app.scss';
     

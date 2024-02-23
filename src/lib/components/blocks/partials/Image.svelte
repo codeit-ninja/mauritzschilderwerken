@@ -1,12 +1,12 @@
 <script lang="ts">
-    import type { DirectusFiles } from "$directus";
+    import type { directus_files } from "$directus";
     import { page } from "$app/stores";
 
-    export let image: DirectusFiles;
+    export let image: directus_files;
     export let type: 'normal' | 'background' = 'normal';
     export let thumbnail = false;
     export let rounded = true;
-
+    
     let query = '?';
 
     if( thumbnail ) {

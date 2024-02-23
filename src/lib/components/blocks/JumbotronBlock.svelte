@@ -1,13 +1,9 @@
 <script lang="ts">
-    import type { BlockJumbotron } from '$directus';
+    import type { block_jumbotron } from '$directus';
     import { onDestroy } from 'svelte';
     import viewport from '$lib/viewport';
 
-    type Block = Omit<BlockJumbotron, 'text'> & {
-        text: string;
-    }
-
-    export let block: Block;
+    export let block: block_jumbotron;
 
     const chars = block.text.split('')
     
@@ -39,18 +35,23 @@
     })
 </script>
 <div 
-    class="block block--jumbotron rounded-4"
+    class="block block--jumbotron block--jumbotron--{block.variant} rounded-4"
     class:block--negative--margin={block.applyNegativeMargin}
+    class:shape={block.showBackgroundShape}
     use:viewport
     on:viewportEnter={onViewportEnter}
     on:viewportExit={onViewportExit}
 >
     <div class="container">
-        <h6 class="mb-5">{ block.title }</h6>
-        <p class="fs-5 fw-bold">
-            {#each chars as char, i}
-                <span bind:this={elements[i]} style="opacity: .3;">{ char }</span>
-            {/each}
-        </p>
+        <div class="block--jumbotron--content">
+            {#if block.title}
+                <h6 class="mb-5">{ block.title }</h6>
+            {/if}
+            <p class="fs-4 fw-bold">
+                {#each chars as char, i}
+                    <span bind:this={elements[i]} style="opacity: .3;">{ char }</span>
+                {/each}
+            </p>
+        </div>
     </div>
 </div>

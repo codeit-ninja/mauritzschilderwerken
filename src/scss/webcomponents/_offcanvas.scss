@@ -1,0 +1,150 @@
+wc-offcanvas {
+    background-color: var(--#{$prefix}offcanvas-bg);
+    color: var(--#{$prefix}offcanvas-color);
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: var(--#{$prefix}offcanvas-width);
+    height: 100dvh;
+    z-index: 90;
+    transform: translateX(calc(var(--#{$prefix}offcanvas-width) * 2));
+    padding: 3rem 2.5rem;
+    overflow: auto;
+
+    .offcanvas-header {
+        margin-bottom: 2rem;
+        color: var(--#{$prefix}offcanvas-color);
+    }
+
+    &[variant=primary] {
+        --#{$prefix}offcanvas-bg: #{$primary};
+
+        .nav {
+            --#{$prefix}nav-link-color: #{$gray-600};
+            --#{$prefix}nav-link-hover-color: #{$dark};
+            --#{$prefix}nav-link-active-color: #{$dark};
+        }
+    }
+
+    &[variant=light] {
+        --#{$prefix}offcanvas-bg: #{$light};
+    }
+
+    &[variant=dark] {
+        --#{$prefix}offcanvas-bg: #{$dark};
+        --#{$prefix}offcanvas-color: #{$white};
+
+        .nav {
+            --#{$prefix}nav-link-color: #{$gray-600};
+            --#{$prefix}nav-link-hover-color: #{$white};
+            --#{$prefix}nav-link-active-color: #{$white};
+        }
+    }
+}
+
+.has-offcanvas .site {
+    position: relative;
+
+    --#{$prefix}offcanvas-width: 50vw;
+    --#{$prefix}offcanvas-bg: #{$primary};
+    --#{$prefix}offcanvas-color: #{$body-color};
+    --#{$prefix}offcanvas-animation-duration: .15s;
+    --#{$prefix}offcanvas-animation-delay: .15s;
+    --#{$prefix}btn-bg: transparent;
+
+    &::after {
+        background-color: $gray-200;
+        content: " ";
+        display: block;
+        position: absolute;
+        top: 0;
+        right: -100%;
+        align-self: stretch;
+        width: 100%;
+        height: 100%;
+        flex-grow: 1;
+    }
+
+    @include media-breakpoint-down(lg) {
+        --#{$prefix}offcanvas-width: 100vw;
+        --#{$prefix}offcanvas-animation-duration: .35s;
+        --#{$prefix}offcanvas-animation-delay: .35s;
+    }
+
+    @include media-breakpoint-up(xxl) {
+        --#{$prefix}offcanvas-width: 600px;
+    }
+}
+
+.offcanvas-open .site {
+    animation: offcanvas-open-body var(--#{$prefix}offcanvas-animation-duration) forwards;
+
+    wc-offcanvas[open=true] {
+        display: block;
+        animation: offcanvas-open var(--#{$prefix}offcanvas-animation-duration) forwards;
+        animation-delay: var(--#{$prefix}offcanvas-animation-delay);
+    }
+}
+
+.offcanvas-closed .site {
+    transform: translateX(calc(var(--#{$prefix}offcanvas-width) * -1));
+    animation: offcanvas-close-body var(--#{$prefix}offcanvas-animation-duration) forwards;
+    animation-delay: var(--#{$prefix}offcanvas-animation-delay);
+
+    wc-offcanvas {
+        display: none;
+        animation: offcanvas-close var(--#{$prefix}offcanvas-animation-duration) forwards;
+    }
+}
+
+.offcanvas-close {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    background-color: transparent;
+    border: none;
+    font-size: 2rem;
+    color: var(--#{$prefix}offcanvas-color);
+
+    @include transition(.12s);
+
+    &:hover {
+        margin-left: -.3rem;
+    }
+
+    span {
+        font-size: 1.1rem;
+    }
+}
+
+@keyframes offcanvas-open-body {
+    to {
+        transform: translateX(calc(var(--#{$prefix}offcanvas-width) * -1));
+    }
+}
+
+@keyframes offcanvas-open {
+    to {
+        transform: translateX(var(--#{$prefix}offcanvas-width));
+    }
+}
+
+@keyframes offcanvas-close-body {
+    from {
+        transform: translateX(calc(var(--#{$prefix}offcanvas-width) * -1));
+    }
+
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes offcanvas-close {
+    from {
+        transform: translateX(var(--#{$prefix}offcanvas-width));
+    }
+
+    to {
+        transform: translateX(calc(var(--#{$prefix}offcanvas-width) * 2));
+    }
+}

@@ -4,6 +4,8 @@
     --#{$prefix}border-size: 1px;
     --#{$prefix}border-color: transparent;
 
+    $this: &;
+
     background-color: var(--#{$prefix}btn-bg);
     text-transform: uppercase;
     text-decoration: none;
@@ -27,7 +29,7 @@
     &-outline-white {
         --#{$prefix}btn-color: #{$white};
         --#{$prefix}border-size: 1px;
-        --#{$prefix}border-color: #{$gray-500};
+        --#{$prefix}border-color: #{$gray-400};
     }
 
     &-outline-dark {
@@ -48,5 +50,20 @@
         --#{$prefix}btn-color: #{$dark};
         --#{$prefix}border-size: 1px;
         --#{$prefix}border-color: #{$white};
+    }
+
+    &-check {
+        + .btn {
+            cursor: pointer;
+        }
+
+        &:checked {
+            + #{$this}-outline {
+                &-dark {
+                    --#{$prefix}btn-bg: #{$dark};
+                    --#{$prefix}btn-color: #{$white};
+                }
+            }
+        }
     }
 }

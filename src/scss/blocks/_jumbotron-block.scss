@@ -1,25 +1,52 @@
 .block--jumbotron {
+    $this: &;
+
     position: relative;
-    background-color: $black;
-    padding: 12rem 0 8rem;
-    color: $white;
-    overflow: hidden;
+
+    @include media-breakpoint-down(xl) {
+        padding-top: 5rem;
+        padding-bottom: 4rem;
+    }
 
     > * {
         position: relative;
         z-index: 1000;
     }
 
-    &::before {
-        content: " ";
-        position: absolute;
-        top: -500px;
-        left: -500px;
-        height: calc(100% + 1000px);
-        width: calc(100% + 1000px);
-        z-index: 5;
-        transform: rotate(50deg);
-        
-        @include gradient-x-three-colors($start-color: $primary, $mid-color: $black, $color-stop: 50%, $end-color: $purple);
+    &--primary  {
+        background-color: $black;
+        color: $white;
+        padding: 12rem 0 8rem;
+        overflow: hidden;
+
+        &::before {
+            content: " ";
+            position: absolute;
+            top: -500px;
+            left: -500px;
+            height: calc(100% + 1000px);
+            width: calc(100% + 1000px);
+            z-index: 5;
+            transform: rotate(50deg);
+            
+            @include gradient-x-three-colors($start-color: $primary, $mid-color: $black, $color-stop: 50%, $end-color: $purple);
+        }
+
+        #{$this}--content {
+            padding: 0 4rem;
+        }
+    }
+
+    &--secondary {
+        padding: 12rem 0 2rem;
+        overflow: visible;
+
+        #{$this}--content {
+            padding-right: 12rem;
+
+            @include media-breakpoint-down(lg) {
+                padding-right: 0;
+            }
+        }
     }
 }

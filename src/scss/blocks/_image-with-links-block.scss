@@ -18,4 +18,15 @@
     p {
         margin-bottom: 0;
     }
+
+    &--title {
+        display: flex;
+        align-items: center;
+
+        span {
+            margin-left: auto;
+            font-size: 3rem;
+            transform: rotate(-45deg);
+        }
+    }
 }

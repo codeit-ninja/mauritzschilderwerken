@@ -1,11 +1,12 @@
 import { client } from "$lib/directus"
 import { readItems } from "@directus/sdk"
-import type { Pages } from "$directus"
+import type { pages } from "$directus"
 
-export const getPageBySlug = async ( slug: string ): Promise<Pages> => {
+export const getPageBySlug = async ( slug: string ): Promise<pages> => {
     const request = await client.request(
         readItems('pages', {
-            fields: ['*', { blocks: ['*.*'] }],
+            // @ts-expect-error
+            fields: ['*', { blocks: ['*.*.*.*'] }],
             filter: {
                 slug: {
                     _eq: slug
@@ -15,5 +16,5 @@ export const getPageBySlug = async ( slug: string ): Promise<Pages> => {
         })
     )
 
-    return request.at(0) as Pages
+    return request.at(0) as pages
 }

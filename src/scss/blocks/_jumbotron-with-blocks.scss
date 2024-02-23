@@ -11,6 +11,10 @@
         overflow: hidden;
         padding: 5rem 15rem;
         border: 1px solid $gray-900;
+        
+        @include media-breakpoint-down(xl) {
+            padding: 5rem 3rem;
+        }
 
         > * {
             position: relative;
