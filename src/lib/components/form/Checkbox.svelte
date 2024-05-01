@@ -1,8 +1,8 @@
 <script lang="ts">
-    import type { FormFields } from "$directus";
+    import type { form_fields } from "$directus";
     import { randomID } from "$lib/utils";
 
-    type Checkbox = Omit<FormFields, 'options'> & {
+    type Checkbox = Omit<form_fields, 'options'> & {
         options: { key: string; value: string; }[]
     }
 

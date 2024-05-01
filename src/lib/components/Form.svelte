@@ -1,22 +1,28 @@
 <script lang="ts">
-    import type { FormFields, FormsFields } from "$directus";
+    import type { form_fields, forms_fields } from "$directus";
+    import {createEventDispatcher} from 'svelte';
     import { client } from "$lib/directus";
     import { createItem } from "@directus/sdk";
     import Checkbox from "./form/Checkbox.svelte";
-    import Number from "./form/Number.svelte";
     import Text from "./form/Text.svelte";
     import Textarea from "./form/Textarea.svelte";
 
-    type Fields = Omit<FormsFields, 'item'> & {
-        item: FormFields;
+    type Fields = Omit<forms_fields, 'item'> & {
+        item: form_fields;
     }
 
     export let id: number;
     export let fields: Fields[];
     export let title: string;
 
-    const submit = (e) => {
-        const formdata = new FormData(e.target);
+    let isSending = false;
+
+    const dispatch = createEventDispatcher();
+
+    const submit = (e: SubmitEvent) => {
+        isSending = true;
+
+        const formdata = new FormData(e.target as HTMLFormElement);
         const data = Object
             .fromEntries( Array.from( formdata.keys() )
             .map(key => [key, formdata.getAll(key).length > 1 ? formdata.getAll(key) : formdata.get(key)]))
@@ -26,6 +32,11 @@
                 form: id,
                 data: JSON.stringify( data )
             })
+        )
+        .then(() => setTimeout(() => {
+                isSending = false
+                dispatch('send');
+            }, 750)
         )
     }
 </script>
@@ -45,6 +56,11 @@
         {/if}
     {/each}
     <div class="mt-5">
-        <button type="submit" class="btn btn-white">Verzenden</button>
+        <button type="submit" class="btn btn-white d-flex align-items-center gap-2">
+            {#if isSending}
+                <span class="spinner-border spinner-border-sm border-1" aria-hidden="true"></span>
+            {/if}
+            Verzenden
+        </button>
     </div>
 </form>
