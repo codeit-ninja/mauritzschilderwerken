@@ -1,5 +1,5 @@
 <script lang="ts">
-    import type { FormFields } from "$directus";
+    import type { form_fields } from "$directus";
     import { randomID } from "$lib/utils";
 
     type Text = {
@@ -9,7 +9,7 @@
         placeholder: string | null;
     }
 
-    export let field: FormFields;
+    export let field: form_fields;
 
     const id = randomID();
     const { label } = field;
@@ -18,10 +18,10 @@
     {#if label}
         <label class="d-block form-label mt-5" for={id}>{ label }</label>
     {/if}
-    <input 
-        type="text"
+    <input
         {...field}
         {id}
+        type="text"
         class="form-control"
     />
 </div>

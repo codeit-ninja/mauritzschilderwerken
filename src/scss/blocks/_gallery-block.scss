@@ -23,14 +23,21 @@
             grid-column-end: 3;
             grid-row-start: auto;
             grid-row-end: auto;
-            padding: 3rem;
             min-height: 500px;
+        }
+
+        @include media-breakpoint-down(sm) {
+            padding: 1rem;
         }
 
         p {
             margin-top: .5rem;
             margin-bottom: 0;
             color: $text-muted;
+
+            @include media-breakpoint-down(sm) {
+                font-size: .7rem;
+            }
         }
     }
 
@@ -41,8 +48,13 @@
         transform: rotate(13deg);
 
         @include media-breakpoint-down(xl) {
+            right: 5rem;
             top: -80px;
             text-wrap: nowrap;
+        }
+        
+        @include media-breakpoint-down(sm) {
+            right: 1rem;
         }
     }
 }

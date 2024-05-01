@@ -47,7 +47,7 @@
             {#if block.title}
                 <h6 class="mb-5">{ block.title }</h6>
             {/if}
-            <p class="fs-4 fw-bold">
+            <p class="fw-bold">
                 {#each chars as char, i}
                     <span bind:this={elements[i]} style="opacity: .3;">{ char }</span>
                 {/each}

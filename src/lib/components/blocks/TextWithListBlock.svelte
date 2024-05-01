@@ -13,7 +13,7 @@
 
 <div class="block block--text--with--list">
     <div class="container">
-        <div class="row">
+        <div class="row gy-5">
             <div class="col-md-7">
                 <div class="block--text--with--list--text">
                     {@html block.text}

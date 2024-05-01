@@ -1,7 +1,7 @@
 <script lang="ts">
-    import type { BlockNumbers } from '$directus';
+    import type { block_numbers } from '$directus';
 
-    type Block = Omit<BlockNumbers, 'numbers'> & {
+    type Block = Omit<block_numbers, 'numbers'> & {
         numbers: {
             number: number;
             description: string;
@@ -13,7 +13,7 @@
 </script>
 <div class="block block--numbers">
     <div class="container">
-        <div class="block--numbers--wrapper rounded-4 d-flex justify-content-between">
+        <div class="block--numbers--wrapper">
             {#each block.numbers as item}
                 <div>
                     <span class="d-block fs-1 fw-medium">{ item.number }{ item.addPlusSymbol ? '+' : '' }</span>

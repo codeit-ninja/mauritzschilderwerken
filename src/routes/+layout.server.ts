@@ -24,7 +24,7 @@ export const load = async ( { params } ) => {
     const site = await client.request(
         readSingleton('site', {
             // @ts-expect-error
-            fields: ['*', { home_page: ['*', { blocks: ['*.*.*.*'] }] }, { logo: ['*'] }]
+            fields: ['*', { home_page: ['*', { seo: ['*'], blocks: ['*.*.*.*.*'] }] }, { logo: ['*'], logoDark: ['*'] }]
         })
     )
     
@@ -43,11 +43,15 @@ export const load = async ( { params } ) => {
     let page: pages;
     
     const menuPromises = menu.items.map(async item => {
-        let button: buttons | undefined = undefined;
-        const collection = await fetchMenuItems( item.collection.key )
+        let button: buttons | undefined = undefined
+        let collection: pages | undefined = undefined;
 
         if( item.isButton && item.button ) {
             button = await fetchButton( item.button.key )
+        }
+
+        if( ! button ) {
+            collection = await fetchMenuItems( item.collection.key )
         }
 
         return {

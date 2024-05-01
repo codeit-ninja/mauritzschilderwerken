@@ -31,10 +31,6 @@
             
             @include gradient-x-three-colors($start-color: $primary, $mid-color: $black, $color-stop: 50%, $end-color: $purple);
         }
-
-        #{$this}--content {
-            padding: 0 4rem;
-        }
     }
 
     &--secondary {
@@ -47,6 +43,21 @@
             @include media-breakpoint-down(lg) {
                 padding-right: 0;
             }
+        }
+    }
+
+    
+
+    #{$this}--content {
+        padding: 0 4rem;
+        font-size: clamp(1.6rem, 4.5rem, 3vw);
+
+        @include media-breakpoint-down(md) {
+            padding: 0 2rem;
+        }
+
+        @include media-breakpoint-down(sm) {
+            padding-inline: 1rem;
         }
     }
 }

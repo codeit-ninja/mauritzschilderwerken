@@ -1,6 +1,7 @@
 .block--cta--card {
     position: relative;
     padding: 8rem 0;
+    margin-bottom: 14rem !important;
 
     &--wrapper {
         position: relative;
@@ -9,6 +10,10 @@
 
         .image--background {
             min-height: 500px;
+        }
+
+        @include media-breakpoint-down(md) {
+            padding: 1.5rem;
         }
     }
 
@@ -20,8 +25,12 @@
         display: block;
         content: " ";
         height: calc(100% + 26rem);
-        width: 100%;
+        width: 80%;
         transform: scaleX(-1);
         left: 0;top: -6rem;
+    }
+
+    @include media-breakpoint-down(lg) {
+        margin-bottom: 8rem !important;
     }
 }

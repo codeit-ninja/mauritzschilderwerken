@@ -26,7 +26,7 @@
                 {/if}
             </div>
             <div class="col-md-7">
-                <div class="d-flex flex-column h-100 ps-5">
+                <div class="d-flex flex-column h-100 ps-lg-5">
                     <div class="mb-5" style="min-height: 800px;">
                         <Image image={data.page.topImage} type="background" />
                     </div>

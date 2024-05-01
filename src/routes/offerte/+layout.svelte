@@ -5,8 +5,8 @@
 <div class="site--header text-white">
     <div class="container">
         <div class="site--navbar">
-            <div class="d-flex justify-content-between align-items-center">
-                <div>
+            <div class="row align-items-center">
+                <div class="col-6 col-lg-4">
                     <a href="/" class="d-flex gap-3 align-items-center text-white site--link">
                         <span class="material-symbols-outlined">
                             west
@@ -14,17 +14,14 @@
                         Terug naar website
                     </a>
                 </div>
-                <div>
+                <div class="col-6 col-lg-4 text-end text-lg-center">
                     <Logo />
-                </div>
-                <div>
-                    <button class="btn btn-outline-light btn-sm">Offerte</button>
                 </div>
             </div>
         </div>
     </div>
 </div>
 
-<div class="site--content">
+<div class="site--content mb-5">
     <slot />
 </div>

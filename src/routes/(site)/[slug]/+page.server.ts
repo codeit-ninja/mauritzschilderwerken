@@ -22,7 +22,7 @@ export const load: PageServerLoad = async ({ params }) => {
                     image: ['*.*.*.*'],
                     projects: ['*', { featuredImage: ['*'], categories: ['*', { project_categories_id: ['*'] }], images: ['*.*'] }],
                     topBlockButton: ['*.*.*.*'],
-                    video: ['*.*.*.*']
+                    video: ['*.*.*.*'],
                 }
             ] } ]
         })

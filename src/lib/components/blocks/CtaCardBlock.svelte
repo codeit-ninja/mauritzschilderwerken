@@ -1,23 +1,23 @@
 <script lang="ts">
-    import type { BlockCtaCard, BlockNumbers, Buttons } from '$directus';
+    import type { block_cta_card, buttons } from '$directus';
     import Button from './partials/Button.svelte';
     import Image from './partials/Image.svelte';
 
-    type Block = Omit<BlockCtaCard, 'button'> & {
-        button: Buttons;
+    type Block = Omit<block_cta_card, 'button'> & {
+        button: buttons;
     }
 
-    export let block: BlockCtaCard;
+    export let block: block_cta_card;
 </script>
 <div class="block block--cta--card bg-black text-white rounded-4">
     <div class="container">
         <div class="block--cta--card--wrapper rounded-4">
             <div class="row align-items-center">
-                <div class="col-md-5">
+                <div class="col-lg-5">
                     <Image image={block.image} type="background" />
                 </div>
-                <div class="col-7">
-                    <div class="p-5">
+                <div class="col-lg-7">
+                    <div class="p-lg-5 py-5 py-lg-0">
                         <h5>{ block.title }</h5>
                         <p class="lead mt-4 mb-4">{ block.description }</p>
                         <Button button={ block.button } />

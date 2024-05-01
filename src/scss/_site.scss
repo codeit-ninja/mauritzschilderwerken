@@ -1,4 +1,6 @@
 .site {
+    $this: &;
+
     &--header,
     &--content,
     &--footer {
@@ -44,6 +46,26 @@
         }
     }
 
+    &--header--dark {
+        #{$this}--navbar {
+            .nav {
+                --#{$prefix}nav-link-color: #{$gray-300};
+                --#{$prefix}nav-link-hover-color: #{$dark};
+
+                &-link {
+                    &.active {
+                        --#{$prefix}nav-link-color: #{$dark};
+                    }
+                }
+
+                .btn-outline-white {
+                    --#{$prefix}btn-color: #{$dark};
+                    --#{$prefix}border-color: #{$dark};
+                }
+            }
+        }
+    }
+
     &--content {
         overflow: hidden;
 
@@ -57,6 +79,31 @@
         text-transform: uppercase;
         font-size: .9rem;
         font-weight: 400;
+    }
+
+    &--footer {
+        padding-block-end: 3rem;
+
+        a:not(.btn) {
+            color: var(--#{$prefix}body-color);
+            text-decoration: none;
+        }
+
+        .btn {
+            max-width: 350px;
+            margin: 0 auto;
+        }
+
+        hr {
+            opacity: 1;
+            margin: 3rem 0;
+        }
+
+        span {
+            a {
+                border-bottom: 1px dashed $black;
+            }
+        }
     }
 }
 

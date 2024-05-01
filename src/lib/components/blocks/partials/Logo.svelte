@@ -5,5 +5,9 @@
 </script>
 
 <a href="/">
-    <Image image={$page.data.site.logo} rounded={false} />
+    {#if $page.data.page.headerVariant === 'dark'}
+        <Image image={$page.data.site.logoDark} rounded={false} />
+    {:else}
+        <Image image={$page.data.site.logo} rounded={false} />
+    {/if}
 </a>
