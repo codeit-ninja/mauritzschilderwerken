@@ -18,7 +18,7 @@
             <span class="d-block fs-3 mb-5">{ block.topBlockText }</span>
             <Button button={block.topBlockButton} />
         </div>
-        <div class="row">
+        <div class="row gy-4">
             <div class="col-md-6">
                 <div class="block--jumbotron--with--blocks--bottom--left rounded-4">
                     {@html block.bottomLeftBlockContent }

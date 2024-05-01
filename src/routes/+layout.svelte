@@ -14,8 +14,6 @@
     onMount( async () => {
         await import('bootstrap')
     })
-
-    console.log(data)
 </script>
 <svelte:head>
     <title>{data.page.seo.title}</title>
