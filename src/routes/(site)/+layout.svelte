@@ -16,7 +16,7 @@
 <div class="site--header site--header--{ data.page.headerVariant }">
     <div class="container">
         <div class="site--navbar">
-            <div class="d-flex align-items-center">
+            <div class="d-flex align-items-center gap-4">
                 <div class="site--navbar--left d-none d-xl-block">
                     <Nav items={leftSideNavItems} gap="4" />
                 </div>

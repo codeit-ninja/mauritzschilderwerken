@@ -27,7 +27,9 @@
         }
 
         @include media-breakpoint-down(sm) {
-            padding: 1rem;
+            padding: 1.5rem;
+            min-height: auto;
+            justify-content: end;
         }
 
         p {
@@ -54,7 +56,12 @@
         }
         
         @include media-breakpoint-down(sm) {
-            right: 1rem;
+            position: static;
+            right: .5rem;
+            padding: .75rem 1rem;
+            font-size: .8rem;
+            transform: rotate(0);
+            margin-bottom: 1.5rem;
         }
     }
 }

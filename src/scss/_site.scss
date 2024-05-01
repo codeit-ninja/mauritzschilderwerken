@@ -79,7 +79,7 @@
         overflow: clip;
         flex-grow: 1;
 
-        .block {
+        .block:not(:first-child) {
             margin-top: 1.5rem;
         }
     }

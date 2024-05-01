@@ -63,9 +63,9 @@
             <div class="col-lg-5 d-flex justify-content-center justify-content-lg-start">
                 <span class="fs-6">© {new Date().getFullYear()} Mauritz Schilderwerken</span>
             </div>
-            <div class="col-lg-7 d-flex gap-5 justify-content-center justify-content-lg-end">
-                <span class="fs-6">Webdesign: <a href="https://inneractive.nl/" target="_blank">Inneractive</a></span>
-                <span class="fs-6">Development: <a href="https://codeit.ninja/" target="_blank">Code IT</a></span>
+            <div class="col-lg-7 d-flex flex-column flex-md-row gap-2 gap-md-4 justify-content-center justify-content-lg-end">
+                <span class="fs-6 text-center text-md-start">Webdesign: <a href="https://inneractive.nl/" target="_blank">Inneractive</a></span>
+                <span class="fs-6 text-center text-md-start">Development: <a href="https://codeit.ninja/" target="_blank">Code IT</a></span>
             </div>
         </div>
     </div>

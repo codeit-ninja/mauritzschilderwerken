@@ -24,10 +24,20 @@
             }
 
             @include media-breakpoint-down(md) {
+                padding-bottom: 0;
+
                 p,
                 .btn {
                     margin-left: 1.5rem;
                 }
+            }
+        }
+
+        @include media-breakpoint-down(md) {
+            .image--background {
+                position: relative;
+                right: -3rem;
+                top: -1rem;
             }
         }
     }

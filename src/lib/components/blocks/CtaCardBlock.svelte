@@ -9,7 +9,7 @@
 
     export let block: block_cta_card;
 </script>
-<div class="block block--cta--card bg-black text-white rounded-4">
+<div class="block block--cta--card bg-black text-white">
     <div class="container">
         <div class="block--cta--card--wrapper rounded-4">
             <div class="row align-items-center">

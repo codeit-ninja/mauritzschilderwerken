@@ -45,10 +45,10 @@
                 </div>
                 <div class="col-md-7">
                     <div class="d-flex flex-column h-100 ps-lg-5">
-                        <div class="mb-5" style="min-height: 800px;">
+                        <div class="mb-5" >
                             <Image image={data.page.topImage} type="background" />
                         </div>
-                        <div style="min-height: 500px;">
+                        <div>
                             <Image image={data.page.bottomImage} type="background" />
                         </div>
                     </div>

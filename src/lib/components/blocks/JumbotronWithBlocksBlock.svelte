@@ -1,17 +1,17 @@
 <script lang="ts">
-    import type { BlockJumbotron, BlockJumbotronWithBlocks, Buttons, DirectusFiles } from '$directus';
+    import type { block_jumbotron, block_jumbotron_with_blocks, buttons, directus_files } from '$directus';
     import Button from './partials/Button.svelte';
     import Image from './partials/Image.svelte';
 
-    type Block = Omit<BlockJumbotronWithBlocks, 'topBlockButton' | 'bottomRightImage'> & {
-        topBlockButton: Buttons;
-        bottomRightImage: DirectusFiles;
+    type Block = Omit<block_jumbotron_with_blocks, 'topBlockButton' | 'bottomRightImage'> & {
+        topBlockButton: buttons;
+        bottomRightImage: directus_files;
     }
 
     export let block: Block;
 </script>
 
-<div class="block block--jumbotron--with--blocks rounded-4 bg-black py-5">
+<div class="block block--jumbotron--with--blocks bg-black py-5">
     <div class="container">
         <div class="block--jumbotron--with--blocks--top--block rounded-4 mb-4">
             <h6 class="mb-5">— { block.topBlockTitle }</h6>
