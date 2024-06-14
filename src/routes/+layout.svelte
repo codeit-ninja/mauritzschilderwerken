@@ -18,6 +18,7 @@
 <svelte:head>
     <title>{data.page.seo.title}</title>
     <meta name="description" content={data.page.seo.description} />
+    <script defer src="https://umami-g0skwk4.185.208.207.112.sslip.io/script.js" data-website-id="db994ec7-3f49-4039-a7e7-b483b304d9f5"></script>
 </svelte:head>
 <slot />
 
