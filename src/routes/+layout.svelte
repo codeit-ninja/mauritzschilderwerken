@@ -18,6 +18,12 @@
 <svelte:head>
     <title>{data.page.seo.title}</title>
     <meta name="description" content={data.page.seo.description} />
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    
     <script defer src="https://umami-g0skwk4.185.208.207.112.sslip.io/script.js" data-website-id="db994ec7-3f49-4039-a7e7-b483b304d9f5"></script>
 </svelte:head>
 <slot />
