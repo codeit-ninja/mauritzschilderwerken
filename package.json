@@ -38,7 +38,7 @@
   },
   "type": "module",
   "dependencies": {
-    "@directus/sdk": "^14.0.0",
+    "@directus/sdk": "^19.1.0",
     "@prisma/client": "5.7.1",
     "better-sqlite3": "^9.6.0",
     "drizzle-orm": "^0.29.5",
