@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       '@directus/sdk':
-        specifier: ^19.1.0
-        version: 19.1.0
+        specifier: ^14.0.0
+        version: 14.0.0
       '@prisma/client':
         specifier: 5.7.1
         version: 5.7.1(prisma@5.22.0)
@@ -106,9 +106,9 @@ packages:
   '@directus/schema@11.0.4':
     resolution: {integrity: sha512-dawYNRHh4NZSDRzmBm7lhWLy1IYvZytkeWzOgrP17GnUG7fCS4cOVKIpVG14r0TTOKps6d7bZdTCrwWQG6hT2w==}
 
-  '@directus/sdk@19.1.0':
-    resolution: {integrity: sha512-Nqem9BsvvGyVtAa69mGPtoMoMVkZxdIREdsWvvTzNF4/1XqaFfEiFL7PhtUNfc46/Nufus2+QUKYQbNiAWe3ZA==}
-    engines: {node: '>=22'}
+  '@directus/sdk@14.0.0':
+    resolution: {integrity: sha512-xxX20VpdwKXR5O1QNo1HXY3hF8sulOjTdio+zWELLGsSnW4asXT32VLGhiPSl9gtZ2ctSnsrU29k5ACYD2WoRQ==}
+    engines: {node: '>=18.0.0'}
 
   '@esbuild-kit/core-utils@3.3.2':
     resolution: {integrity: sha512-sPRAnw9CdSsRmEtnsl2WXWdyquogVpB3yZ3dgwJfe8zrOzTsV7cJvmwrKVa+0ma5BoiGJ+BoqkMvawbayKUsqQ==}
@@ -2164,7 +2164,7 @@ snapshots:
       - supports-color
       - tedious
 
-  '@directus/sdk@19.1.0': {}
+  '@directus/sdk@14.0.0': {}
 
   '@esbuild-kit/core-utils@3.3.2':
     dependencies:
