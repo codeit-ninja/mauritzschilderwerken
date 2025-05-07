@@ -1,4 +1,4 @@
-import env from "$env/dynamic/public";
+import { env } from "$env/dynamic/public";
 import { createDirectus, rest, staticToken } from "@directus/sdk";
 import type { MySchema } from "$directus";
 
